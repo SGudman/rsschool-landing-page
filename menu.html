@@ -4,81 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Resource coffee house menu.">
-    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="assets/icons/logo-light.svg" type="image/svg+xml">
     <link rel="stylesheet" href="style.css">
     <title>Resource — Menu</title>
   </head>
   <body>
-    <header class="site-header">
-      <div class="container header-inner">
-        <a class="logo" href="index.html" aria-label="Resource coffee house home">Resource</a>
-        <nav class="site-nav" aria-label="Main navigation">
-          <ul>
-            <li><a href="index.html#favorite">Favorite coffee</a></li>
-            <li><a href="index.html#about">About</a></li>
-            <li><a href="index.html#app">Mobile app</a></li>
-            <li><a href="#contact">Contact us</a></li>
-          </ul>
-        </nav>
-        <div class="header-actions">
-          <a class="menu-link is-current" href="menu.html">Menu <span aria-hidden="true">↗</span></a>
-          <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme">◐</button>
-          <button class="burger-button" type="button" aria-label="Open navigation menu">☰</button>
-        </div>
+    <header class="header">
+      <a class="logo" href="index.html" aria-label="Resource Coffee House home">
+        <img src="assets/icons/logo-light.svg" alt="Resource Coffee House">
+      </a>
+      <nav class="navigation" aria-label="Main navigation">
+        <ul class="navigation-list">
+          <li><a href="index.html#favorite">Favorite coffee</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#mobile-app">Mobile app</a></li>
+          <li><a href="#contacts">Contact us</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-button" type="button" data-theme-toggle aria-label="Switch to dark theme" aria-pressed="false">
+          <img src="assets/icons/theme-switch.svg" alt="">
+        </button>
+        <a class="menu-link" href="menu.html" aria-current="page">
+          <span>Menu</span>
+          <img src="assets/icons/menu-cup.svg" alt="">
+        </a>
+        <button class="burger-button" type="button" aria-label="Open navigation menu"><span></span><span></span></button>
       </div>
     </header>
 
-    <main>
-      <section class="menu-hero section-dark" aria-labelledby="menu-title">
-        <div class="container narrow-content">
-          <p class="eyebrow">Resource coffee house</p>
-          <h1 id="menu-title">Behind each of our cups hides an <em>amazing surprise</em></h1>
-        </div>
-      </section>
+    <main class="menu-main">
+      <section class="menu" aria-labelledby="menu-title">
+        <h1 id="menu-title">Behind each of our cups hides an <em>amazing surprise</em></h1>
 
-      <section class="section catalog-section" aria-labelledby="catalog-title">
-        <div class="container">
-          <p class="eyebrow">Choose your drink</p>
-          <h2 id="catalog-title">Coffee, tea and <em>dessert</em></h2>
-          <div class="category-tabs" role="group" aria-label="Product categories">
-            <button class="category-tab is-active" type="button">☕ Coffee</button>
-            <button class="category-tab" type="button">🍵 Tea</button>
-            <button class="category-tab" type="button">🍰 Dessert</button>
-          </div>
-          <div class="product-grid">
-            <article class="product-card"><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=640&q=80" alt="Irish coffee"><div><h3>Irish coffee</h3><p>Fragrant black coffee with Jameson Irish whiskey and whipped milk.</p><strong>$7.00</strong></div></article>
-            <article class="product-card"><img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=640&q=80" alt="Kahlua coffee"><div><h3>Kahlua coffee</h3><p>Classic coffee with milk and Kahlua liqueur under a cap of frothed milk.</p><strong>$7.00</strong></div></article>
-            <article class="product-card"><img src="https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&w=640&q=80" alt="Honey raf"><div><h3>Honey raf</h3><p>Espresso with frothed milk, cream and aromatic honey.</p><strong>$5.50</strong></div></article>
-            <article class="product-card"><img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=640&q=80" alt="Ice cappuccino"><div><h3>Ice cappuccino</h3><p>Cappuccino with soft thick foam in summer version with ice.</p><strong>$5.00</strong></div></article>
-            <article class="product-card"><img src="https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?auto=format&fit=crop&w=640&q=80" alt="Espresso"><div><h3>Espresso</h3><p>Classic espresso with rich crema and a balanced intense taste.</p><strong>$4.50</strong></div></article>
-            <article class="product-card"><img src="https://images.unsplash.com/photo-1561882468-9110e03e0f78?auto=format&fit=crop&w=640&q=80" alt="Latte"><div><h3>Latte</h3><p>Espresso with steamed milk and a light layer of delicate foam.</p><strong>$5.50</strong></div></article>
-            <article class="product-card"><img src="https://images.unsplash.com/photo-1578314675249-a6910f80cc4e?auto=format&fit=crop&w=640&q=80" alt="Latte macchiato"><div><h3>Latte macchiato</h3><p>Espresso with frothed milk and a soft creamy texture.</p><strong>$5.50</strong></div></article>
-            <article class="product-card"><img src="https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=640&q=80" alt="Coffee with cognac"><div><h3>Coffee with cognac</h3><p>Rich coffee with cognac and a warm, aromatic finish.</p><strong>$6.50</strong></div></article>
-          </div>
-          <button class="button show-more" type="button">Load more <span aria-hidden="true">↓</span></button>
+        <div class="category-tabs" role="group" aria-label="Product categories">
+          <button class="category-tab category-tab-active" type="button"><span class="category-icon"></span>Coffee</button>
+          <button class="category-tab" type="button"><span class="category-icon"></span>Tea</button>
+          <button class="category-tab" type="button"><span class="category-icon"></span>Dessert</button>
         </div>
+
+        <div class="product-grid">
+          <article class="product-card"><img src="assets/images/coffee-1.png" alt="Irish coffee"><div class="product-content"><h2>Irish coffee</h2><p>Fragrant black coffee with Jameson Irish whiskey and whipped milk</p><p class="price">$7.00</p></div></article>
+          <article class="product-card"><img src="assets/images/coffee-2.png" alt="Kahlua coffee"><div class="product-content"><h2>Kahlua coffee</h2><p>Classic coffee with milk and Kahlua liqueur under a cap of frothed milk</p><p class="price">$7.00</p></div></article>
+          <article class="product-card"><img src="assets/images/coffee-3.png" alt="Honey raf"><div class="product-content"><h2>Honey raf</h2><p>Espresso with frothed milk, cream and aromatic honey</p><p class="price">$5.50</p></div></article>
+          <article class="product-card"><img src="assets/images/coffee-4.png" alt="Ice cappuccino"><div class="product-content"><h2>Ice cappuccino</h2><p>Cappuccino with soft thick foam in summer version with ice</p><p class="price">$5.00</p></div></article>
+          <article class="product-card"><img src="assets/images/coffee-5.png" alt="Espresso"><div class="product-content"><h2>Espresso</h2><p>Classic black coffee</p><p class="price">$4.50</p></div></article>
+          <article class="product-card"><img src="assets/images/coffee-6.png" alt="Latte"><div class="product-content"><h2>Latte</h2><p>Espresso coffee with the addition of steamed milk and dense milk foam</p><p class="price">$5.50</p></div></article>
+          <article class="product-card"><img src="assets/images/coffee-7.png" alt="Latte macchiato"><div class="product-content"><h2>Latte macchiato</h2><p>Espresso with frothed milk and chocolate</p><p class="price">$5.50</p></div></article>
+          <article class="product-card"><img src="assets/images/coffee-8.png" alt="Coffee with cognac"><div class="product-content"><h2>Coffee with cognac</h2><p>Fragrant black coffee with cognac and whipped cream</p><p class="price">$6.50</p></div></article>
+        </div>
+
+        <button class="show-more" type="button" aria-label="Show more products"><img src="assets/icons/refresh.svg" alt=""></button>
       </section>
     </main>
 
-    <footer class="site-footer section-dark" id="contact">
-      <div class="container footer-grid">
-        <div>
-          <a class="logo footer-logo" href="index.html">Resource</a>
-          <h2>Sip, relax and make<br><em>your day special</em></h2>
-          <div class="social-links">
-            <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">Instagram</a>
-            <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">Facebook</a>
-            <a href="https://twitter.com/" target="_blank" rel="noreferrer">Twitter</a>
-          </div>
-        </div>
-        <div class="contact-block">
-          <h3>Contact us</h3>
-          <a href="https://maps.google.com/?q=8558+Green+Valley+Drive+Lakewood+CA" target="_blank" rel="noreferrer">8558 Green Valley Drive, Lakewood, CA</a>
-          <a href="tel:+13127712734">+1 312-771-2734</a>
-          <p>Mon–Sat: 9:00 AM – 9:00 PM</p>
-        </div>
-      </div>
+    <footer class="footer" id="contacts">
+      <div class="footer-offer"><h2>Sip, Savor, Smile.<br><em>It’s coffee time!</em></h2><ul class="social-links" aria-label="Social networks"><li><a href="https://twitter.com/" target="_blank" rel="noreferrer" aria-label="Twitter"><img src="assets/icons/twitter.svg" alt=""></a></li><li><a href="https://www.instagram.com/" target="_blank" rel="noreferrer" aria-label="Instagram"><img src="assets/icons/instagram.svg" alt=""></a></li><li><a href="https://www.facebook.com/" target="_blank" rel="noreferrer" aria-label="Facebook"><img src="assets/icons/facebook.svg" alt=""></a></li></ul></div>
+      <div class="contacts"><h3>Contact us</h3><address><a href="https://maps.google.com/?q=8558+Green+Rd+LA" target="_blank" rel="noreferrer"><img src="assets/icons/location.svg" alt=""><span>8558 Green Rd., LA</span></a><a href="tel:+16035550123"><img src="assets/icons/phone.svg" alt=""><span>+1 (603) 555-0123</span></a><p><img src="assets/icons/clock.svg" alt=""><span>Mon-Sat: 9:00 AM – 23:00 PM</span></p></address></div>
     </footer>
+
     <script src="script.js"></script>
   </body>
 </html>
