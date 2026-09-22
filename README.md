@@ -1,7 +1,6 @@
-# Launchpad Landing Page
+# Coffee House
 
-Авторский проект для RS School Landing Page Part 1.
+Landing Page для RS School по макету Coffee House 2026Q3.
 
 - Главная страница: `index.html`
-- Каталог: `catalog.html`
-- Вариант: авторский проект
+- Меню: `menu.html`
