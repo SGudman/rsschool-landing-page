@@ -9,13 +9,16 @@ if (savedTheme === "dark") {
 
 function updateThemeButton() {
   const currentTheme = document.documentElement.dataset.theme;
+  const themeIcon = themeButton.querySelector("img");
 
   if (currentTheme === "dark") {
     themeButton.setAttribute("aria-pressed", "true");
     themeButton.setAttribute("aria-label", "Switch to light theme");
+    themeIcon.src = "assets/icons/theme-switch-dark.svg";
   } else {
     themeButton.setAttribute("aria-pressed", "false");
     themeButton.setAttribute("aria-label", "Switch to dark theme");
+    themeIcon.src = "assets/icons/theme-switch.svg";
   }
 }
 
