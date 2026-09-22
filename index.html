@@ -1,10 +1,122 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coffee House — Home</title>
+    <meta name="description" content="Resource coffee house — premium coffee and desserts.">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="style.css">
+    <title>Resource — Coffee House</title>
   </head>
   <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="logo" href="index.html" aria-label="Resource coffee house home">Resource</a>
+        <nav class="site-nav" aria-label="Main navigation">
+          <ul>
+            <li><a href="#favorite">Favorite coffee</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#app">Mobile app</a></li>
+            <li><a href="#contact">Contact us</a></li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <a class="menu-link" href="menu.html">Menu <span aria-hidden="true">↗</span></a>
+          <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme">◐</button>
+          <button class="burger-button" type="button" aria-label="Open navigation menu">☰</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero section-dark" aria-labelledby="hero-title">
+        <div class="container hero-content">
+          <p class="eyebrow">Enjoy your coffee</p>
+          <h1 id="hero-title">Enjoy premium <em>coffee</em> at our charming cafe</h1>
+          <p class="hero-description">With our great selection of coffee and desserts, you can always find something that makes your day special.</p>
+          <a class="button button-light" href="menu.html">View menu <span aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+
+      <section class="section" id="favorite" aria-labelledby="favorite-title">
+        <div class="container">
+          <p class="eyebrow">Choose your favorite</p>
+          <h2 id="favorite-title">Your favorite <em>coffee</em></h2>
+          <div class="slider-layout">
+            <button class="slider-control" type="button" aria-label="Previous coffee">←</button>
+            <div class="favorite-grid">
+              <article class="favorite-card">
+                <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=640&q=80" alt="Cup of freshly brewed coffee">
+                <h3>Irish coffee</h3>
+                <p>Fragrant black coffee with Jameson Irish whiskey and whipped milk.</p>
+                <strong>$7.00</strong>
+              </article>
+              <article class="favorite-card featured-card">
+                <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=640&q=80" alt="Cappuccino with thick milk foam">
+                <h3>Honey raf</h3>
+                <p>Espresso with frothed milk, cream and aromatic honey.</p>
+                <strong>$5.50</strong>
+              </article>
+              <article class="favorite-card">
+                <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=640&q=80" alt="Iced coffee in a glass">
+                <h3>Ice cappuccino</h3>
+                <p>Cappuccino with soft thick foam in a refreshing summer version with ice.</p>
+                <strong>$5.00</strong>
+              </article>
+            </div>
+            <button class="slider-control" type="button" aria-label="Next coffee">→</button>
+          </div>
+          <div class="slider-dots" aria-label="Slider position"><span class="is-active"></span><span></span><span></span></div>
+        </div>
+      </section>
+
+      <section class="section about-section" id="about" aria-labelledby="about-title">
+        <div class="container">
+          <p class="eyebrow">About us</p>
+          <h2 id="about-title">Behind each of our cups hides an <em>amazing surprise</em></h2>
+          <div class="about-grid">
+            <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=900&q=80" alt="Cozy coffee house interior">
+            <div class="about-copy">
+              <p>We create a warm place where premium coffee, thoughtful details and friendly conversation meet.</p>
+              <p>Our baristas choose every bean with care and make each cup for the moment you need it.</p>
+              <a class="text-link" href="menu.html">Explore our menu <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section app-section section-dark" id="app" aria-labelledby="app-title">
+        <div class="container app-grid">
+          <div>
+            <p class="eyebrow">Coffee on the go</p>
+            <h2 id="app-title">Download our app and enjoy your coffee anywhere</h2>
+            <p>Order your favorite drink, save time and collect warm moments wherever you are.</p>
+            <a class="button button-light" href="#contact">Get the app <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="phone-art" aria-hidden="true">☕</div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer section-dark" id="contact">
+      <div class="container footer-grid">
+        <div>
+          <a class="logo footer-logo" href="index.html">Resource</a>
+          <h2>Sip, relax and make<br><em>your day special</em></h2>
+          <div class="social-links">
+            <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">Instagram</a>
+            <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">Facebook</a>
+            <a href="https://twitter.com/" target="_blank" rel="noreferrer">Twitter</a>
+          </div>
+        </div>
+        <div class="contact-block">
+          <h3>Contact us</h3>
+          <a href="https://maps.google.com/?q=8558+Green+Valley+Drive+Lakewood+CA" target="_blank" rel="noreferrer">8558 Green Valley Drive, Lakewood, CA</a>
+          <a href="tel:+13127712734">+1 312-771-2734</a>
+          <p>Mon–Sat: 9:00 AM – 9:00 PM</p>
+        </div>
+      </div>
+    </footer>
+    <script src="script.js"></script>
   </body>
 </html>
