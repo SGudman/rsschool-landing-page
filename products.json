@@ -290,7 +290,7 @@
   {
     "name": "Moroccan",
     "description": "Fragrant black tea with the addition of tangerine, cinnamon, honey, lemon and mint",
-    "image": "assets/images/tea-1.png",
+    "image": "assets/images/tea-3.png",
     "price": "4.50",
     "category": "tea",
     "sizes": {
@@ -326,7 +326,7 @@
   {
     "name": "Ginger",
     "description": "Original black tea with fresh ginger, lemon and honey",
-    "image": "assets/images/tea-2.png",
+    "image": "assets/images/tea-1.png",
     "price": "5.00",
     "category": "tea",
     "sizes": {
@@ -362,7 +362,7 @@
   {
     "name": "Cranberry",
     "description": "Invigorating black tea with cranberry and honey",
-    "image": "assets/images/tea-3.png",
+    "image": "assets/images/tea-2.png",
     "price": "5.00",
     "category": "tea",
     "sizes": {
