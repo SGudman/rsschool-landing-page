@@ -6,6 +6,8 @@
     <meta name="description" content="Resource coffee house menu.">
     <link rel="icon" href="assets/icons/logo-light.svg" type="image/svg+xml">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="catalog.css">
+    <link rel="stylesheet" href="product-modal.css">
     <title>Resource — Menu</title>
   </head>
   <body>
@@ -53,16 +55,7 @@
           <button class="category-tab" type="button"><span class="category-icon" aria-hidden="true">🍰</span>Dessert</button>
         </div>
 
-        <div class="product-grid">
-          <article class="product-card"><img src="assets/images/coffee-1.png" alt="Irish coffee"><div class="product-content"><h2>Irish coffee</h2><p>Fragrant black coffee with Jameson Irish whiskey and whipped milk</p><p class="price">$7.00</p></div></article>
-          <article class="product-card"><img src="assets/images/coffee-2.png" alt="Kahlua coffee"><div class="product-content"><h2>Kahlua coffee</h2><p>Classic coffee with milk and Kahlua liqueur under a cap of frothed milk</p><p class="price">$7.00</p></div></article>
-          <article class="product-card"><img src="assets/images/coffee-3.png" alt="Honey raf"><div class="product-content"><h2>Honey raf</h2><p>Espresso with frothed milk, cream and aromatic honey</p><p class="price">$5.50</p></div></article>
-          <article class="product-card"><img src="assets/images/coffee-4.png" alt="Ice cappuccino"><div class="product-content"><h2>Ice cappuccino</h2><p>Cappuccino with soft thick foam in summer version with ice</p><p class="price">$5.00</p></div></article>
-          <article class="product-card"><img src="assets/images/coffee-5.png" alt="Espresso"><div class="product-content"><h2>Espresso</h2><p>Classic black coffee</p><p class="price">$4.50</p></div></article>
-          <article class="product-card"><img src="assets/images/coffee-6.png" alt="Latte"><div class="product-content"><h2>Latte</h2><p>Espresso coffee with the addition of steamed milk and dense milk foam</p><p class="price">$5.50</p></div></article>
-          <article class="product-card"><img src="assets/images/coffee-7.png" alt="Latte macchiato"><div class="product-content"><h2>Latte macchiato</h2><p>Espresso with frothed milk and chocolate</p><p class="price">$5.50</p></div></article>
-          <article class="product-card"><img src="assets/images/coffee-8.png" alt="Coffee with cognac"><div class="product-content"><h2>Coffee with cognac</h2><p>Fragrant black coffee with cognac and whipped cream</p><p class="price">$6.50</p></div></article>
-        </div>
+        <div class="product-grid"></div>
 
         <button class="show-more" type="button" aria-label="Show more products"><img src="assets/icons/refresh.svg" alt=""></button>
       </section>
@@ -74,5 +67,39 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="product-modal.js"></script>
+    <script src="catalog.js"></script>
+    <script>
+      const imagePaths = {
+        "Irish coffee": "assets/images/coffee-1.png",
+        "Kahlua coffee": "assets/images/coffee-2.png",
+        "Honey raf": "assets/images/coffee-3.png",
+        "Ice cappuccino": "assets/images/coffee-4.png",
+        "Espresso": "assets/images/coffee-5.png",
+        "Latte": "assets/images/coffee-6.png",
+        "Latte macchiato": "assets/images/coffee-7.png",
+        "Coffee with cognac": "assets/images/coffee-8.png",
+        "Moroccan": "assets/images/tea-1.png",
+        "Ginger": "assets/images/tea-2.png",
+        "Cranberry": "assets/images/tea-3.png",
+        "Sea buckthorn": "assets/images/tea-4.png",
+        "Marble cheesecake": "assets/images/dessert-1.png",
+        "Red velvet": "assets/images/dessert-2.png",
+        "Cheesecakes": "assets/images/dessert-3.png",
+        "Creme brulee": "assets/images/dessert-4.png",
+        "Pancakes": "assets/images/dessert-5.png",
+        "Honey cake": "assets/images/dessert-6.png",
+        "Chocolate cake": "assets/images/dessert-7.png",
+        "Black forest": "assets/images/dessert-8.png"
+      };
+
+      fetch("products.json")
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (products) {
+          initCatalog(products, imagePaths);
+        });
+    </script>
   </body>
 </html>
