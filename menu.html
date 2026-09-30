@@ -70,35 +70,12 @@
     <script src="product-modal.js"></script>
     <script src="catalog.js"></script>
     <script>
-      const imagePaths = {
-        "Irish coffee": "assets/images/coffee-1.png",
-        "Kahlua coffee": "assets/images/coffee-2.png",
-        "Honey raf": "assets/images/coffee-3.png",
-        "Ice cappuccino": "assets/images/coffee-4.png",
-        "Espresso": "assets/images/coffee-5.png",
-        "Latte": "assets/images/coffee-6.png",
-        "Latte macchiato": "assets/images/coffee-7.png",
-        "Coffee with cognac": "assets/images/coffee-8.png",
-        "Moroccan": "assets/images/tea-1.png",
-        "Ginger": "assets/images/tea-2.png",
-        "Cranberry": "assets/images/tea-3.png",
-        "Sea buckthorn": "assets/images/tea-4.png",
-        "Marble cheesecake": "assets/images/dessert-1.png",
-        "Red velvet": "assets/images/dessert-2.png",
-        "Cheesecakes": "assets/images/dessert-3.png",
-        "Creme brulee": "assets/images/dessert-4.png",
-        "Pancakes": "assets/images/dessert-5.png",
-        "Honey cake": "assets/images/dessert-6.png",
-        "Chocolate cake": "assets/images/dessert-7.png",
-        "Black forest": "assets/images/dessert-8.png"
-      };
-
       fetch("products.json")
         .then(function (response) {
           return response.json();
         })
         .then(function (products) {
-          initCatalog(products, imagePaths);
+          initCatalog(products);
         });
     </script>
   </body>

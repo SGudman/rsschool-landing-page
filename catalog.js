@@ -1,4 +1,4 @@
-function initCatalog(products, imagePaths) {
+function initCatalog(products) {
   const tabs = document.querySelectorAll(".category-tab");
   const grid = document.querySelector(".product-grid");
   const showMoreButton = document.querySelector(".show-more");
@@ -21,7 +21,6 @@ function initCatalog(products, imagePaths) {
       const product = products[i];
       if (product.category === activeCategory) {
         categoryProductCount += 1;
-        const imagePath = imagePaths && imagePaths[product.name];
         const card = document.createElement("article");
         const image = document.createElement("img");
         const content = document.createElement("div");
@@ -41,11 +40,9 @@ function initCatalog(products, imagePaths) {
         content.appendChild(description);
         content.appendChild(price);
 
-        if (imagePath) {
-          image.src = imagePath;
-          image.alt = product.name;
-          card.appendChild(image);
-        }
+        image.src = product.image;
+        image.alt = product.name;
+        card.appendChild(image);
         card.appendChild(content);
 
         if (!showAllCards && window.innerWidth <= 768 && categoryProductCount > mobileCardLimit) {
@@ -54,14 +51,14 @@ function initCatalog(products, imagePaths) {
         }
 
         card.addEventListener("click", function () {
-          if (imagePath && typeof window.openProductModal === "function") {
-            window.openProductModal(product, imagePath);
+          if (typeof window.openProductModal === "function") {
+            window.openProductModal(product);
           }
         });
         card.addEventListener("keydown", function (event) {
-          if ((event.key === "Enter" || event.key === " ") && imagePath && typeof window.openProductModal === "function") {
+          if ((event.key === "Enter" || event.key === " ") && typeof window.openProductModal === "function") {
             event.preventDefault();
-            window.openProductModal(product, imagePath);
+            window.openProductModal(product);
           }
         });
         grid.appendChild(card);

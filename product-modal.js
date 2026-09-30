@@ -70,7 +70,7 @@ function handleProductModalKeydown(event) {
   }
 }
 
-function openProductModal(product, imagePath) {
+function openProductModal(product) {
   if (productModal) {
     document.removeEventListener("keydown", handleProductModalKeydown);
     productModal.remove();
@@ -110,7 +110,7 @@ function openProductModal(product, imagePath) {
 
   const image = document.createElement("img");
   image.className = "product-modal__image";
-  image.src = imagePath;
+  image.src = product.image;
   image.alt = product.name;
 
   const content = document.createElement("div");
