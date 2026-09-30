@@ -13,12 +13,13 @@
       <a class="logo" href="index.html" aria-label="Resource Coffee House home">
         <img src="assets/icons/logo-light.svg" alt="Resource Coffee House">
       </a>
-      <nav class="navigation" aria-label="Main navigation">
+      <nav id="main-navigation" class="navigation" aria-label="Main navigation">
         <ul class="navigation-list">
           <li><a href="index.html#favorite">Favorite coffee</a></li>
           <li><a href="index.html#about">About</a></li>
           <li><a href="index.html#mobile-app">Mobile app</a></li>
           <li><a href="#contacts">Contact us</a></li>
+          <li class="navigation-menu-item"><a href="menu.html" aria-current="page">Menu</a></li>
         </ul>
       </nav>
       <div class="header-actions">
@@ -29,7 +30,16 @@
           <span>Menu</span>
           <img src="assets/icons/menu-cup.svg" alt="">
         </a>
-        <button class="burger-button" type="button" aria-label="Open navigation menu"><span></span><span></span></button>
+        <button
+          class="burger-button"
+          type="button"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="main-navigation"
+        >
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </header>
 

@@ -40,6 +40,91 @@ function toggleTheme() {
 updateThemeButton();
 themeButton.addEventListener("click", toggleTheme);
 
+const burgerButton = document.querySelector(".burger-button");
+const navigation = document.querySelector(".navigation");
+const logoLink = document.querySelector(".logo");
+
+if (burgerButton && navigation) {
+  let isNavigationOpen = false;
+  let scrollPosition = 0;
+
+  function setNavigationOpen(isOpen) {
+    if ((isOpen && window.innerWidth > 768) || isOpen === isNavigationOpen) {
+      return;
+    }
+
+    isNavigationOpen = isOpen;
+    navigation.classList.toggle("navigation-open", isNavigationOpen);
+    burgerButton.classList.toggle("burger-button-open", isNavigationOpen);
+    burgerButton.setAttribute("aria-expanded", String(isNavigationOpen));
+    burgerButton.setAttribute("aria-label", isNavigationOpen ? "Close navigation menu" : "Open navigation menu");
+    navigation.setAttribute("aria-hidden", String(!isNavigationOpen && window.innerWidth <= 768));
+
+    if (isNavigationOpen) {
+      scrollPosition = window.scrollY;
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${scrollPosition}px`;
+      document.body.style.left = "0";
+      document.body.style.width = "100%";
+      document.body.style.overflow = "hidden";
+      document.documentElement.classList.add("navigation-scroll-locked");
+      navigation.querySelector("a").focus();
+    } else {
+      const root = document.documentElement;
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.left = "";
+      document.body.style.width = "";
+      document.body.style.overflow = "";
+      window.scrollTo(0, scrollPosition);
+      root.classList.remove("navigation-scroll-locked");
+    }
+  }
+
+  function updateNavigationForScreen() {
+    if (window.innerWidth > 768) {
+      setNavigationOpen(false);
+      navigation.removeAttribute("aria-hidden");
+    } else if (!isNavigationOpen) {
+      navigation.setAttribute("aria-hidden", "true");
+    }
+  }
+
+  burgerButton.addEventListener("click", () => {
+    setNavigationOpen(!isNavigationOpen);
+  });
+
+  navigation.addEventListener("click", (event) => {
+    if (event.target.closest("a")) {
+      setNavigationOpen(false);
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (!isNavigationOpen) {
+      return;
+    }
+
+    if (event.key === "Tab") {
+      if (event.shiftKey && document.activeElement === logoLink) {
+        event.preventDefault();
+        burgerButton.focus();
+      } else if (!event.shiftKey && document.activeElement === burgerButton) {
+        event.preventDefault();
+        logoLink.focus();
+      }
+    }
+
+    if (event.key === "Escape") {
+      burgerButton.focus();
+      setNavigationOpen(false);
+    }
+  });
+
+  window.addEventListener("resize", updateNavigationForScreen);
+  updateNavigationForScreen();
+}
+
 const sliderTrack = document.querySelector(".slider-slides");
 const sliderViewport = document.querySelector(".slider-track");
 const sliderSlides = sliderTrack ? Array.from(sliderTrack.querySelectorAll(".slide")) : [];
